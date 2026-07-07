@@ -6,7 +6,7 @@ pageEncoding="UTF-8"%>
 <head>
 
 <meta charset="UTF-8">
-<title>Food Menu</title>
+<title>KFC Menu</title>
 
 <style>
 
@@ -22,11 +22,10 @@ body{
 }
 
 .header{
-    background:#ff6600;
+    background:#d32f2f;
     color:white;
     text-align:center;
     padding:25px;
-    box-shadow:0 2px 10px gray;
 }
 
 .container{
@@ -42,13 +41,12 @@ body{
     margin:18px;
     padding:15px;
     border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.2);
-    transition:.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
     vertical-align:top;
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-5px);
 }
 
 .food-img{
@@ -56,11 +54,10 @@ body{
     height:180px;
     object-fit:cover;
     border-radius:10px;
-    margin-bottom:15px;
 }
 
 h2{
-    margin:10px 0;
+    margin:15px 0;
 }
 
 .price{
@@ -73,12 +70,12 @@ h2{
 button{
     width:180px;
     padding:12px;
-    background:green;
-    color:white;
     border:none;
     border-radius:5px;
-    cursor:pointer;
+    background:green;
+    color:white;
     font-size:16px;
+    cursor:pointer;
 }
 
 button:hover{
@@ -87,21 +84,10 @@ button:hover{
 
 .viewCart{
     background:blue;
-    width:220px;
 }
 
 .viewCart:hover{
     background:darkblue;
-}
-
-.message{
-    width:400px;
-    margin:20px auto;
-    background:#d4edda;
-    color:green;
-    padding:15px;
-    border-radius:8px;
-    font-weight:bold;
 }
 
 </style>
@@ -111,67 +97,10 @@ button:hover{
 <body>
 
 <div class="header">
-<h1>🍔 Food Menu</h1>
+<h1>🍗 KFC Menu</h1>
 </div>
-
-<%
-String msg=(String)session.getAttribute("message");
-
-if(msg!=null){
-%>
-
-<div class="message">
-<%=msg%>
-</div>
-
-<%
-session.removeAttribute("message");
-}
-%>
 
 <div class="container">
-
-<!-- Pizza -->
-
-<div class="card">
-
-<img src="images/pizza.jpg" class="food-img">
-
-<h2>Pizza</h2>
-
-<p class="price">₹250</p>
-
-<form action="CartServlet" method="post">
-
-<input type="hidden" name="item" value="Pizza">
-<input type="hidden" name="price" value="250">
-
-<button type="submit">Add To Cart</button>
-
-</form>
-
-</div>
-
-<!-- Veg Burger -->
-
-<div class="card">
-
-<img src="images/burger.jpg" class="food-img">
-
-<h2>Veg Burger</h2>
-
-<p class="price">₹120</p>
-
-<form action="CartServlet" method="post">
-
-<input type="hidden" name="item" value="Veg Burger">
-<input type="hidden" name="price" value="120">
-
-<button type="submit">Add To Cart</button>
-
-</form>
-
-</div>
 
 <!-- Chicken Burger -->
 
@@ -187,27 +116,6 @@ session.removeAttribute("message");
 
 <input type="hidden" name="item" value="Chicken Burger">
 <input type="hidden" name="price" value="180">
-
-<button type="submit">Add To Cart</button>
-
-</form>
-
-</div>
-
-<!-- French Fries -->
-
-<div class="card">
-
-<img src="images/French Fries.jpg" class="food-img">
-
-<h2>French Fries</h2>
-
-<p class="price">₹90</p>
-
-<form action="CartServlet" method="post">
-
-<input type="hidden" name="item" value="French Fries">
-<input type="hidden" name="price" value="90">
 
 <button type="submit">Add To Cart</button>
 
@@ -236,20 +144,20 @@ session.removeAttribute("message");
 
 </div>
 
-<!-- Veg Biryani -->
+<!-- French Fries -->
 
 <div class="card">
 
-<img src="images/Veg Biryani.jpg" class="food-img">
+<img src="images/French Fries.jpg" class="food-img">
 
-<h2>Veg Biryani</h2>
+<h2>French Fries</h2>
 
-<p class="price">₹180</p>
+<p class="price">₹90</p>
 
 <form action="CartServlet" method="post">
 
-<input type="hidden" name="item" value="Veg Biryani">
-<input type="hidden" name="price" value="180">
+<input type="hidden" name="item" value="French Fries">
+<input type="hidden" name="price" value="90">
 
 <button type="submit">Add To Cart</button>
 
@@ -281,11 +189,7 @@ session.removeAttribute("message");
 <br><br>
 
 <a href="cart.jsp">
-
-<button class="viewCart">
-🛒 View Cart
-</button>
-
+<button class="viewCart">🛒 View Cart</button>
 </a>
 
 </div>

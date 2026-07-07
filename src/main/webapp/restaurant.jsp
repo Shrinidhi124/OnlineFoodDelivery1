@@ -12,53 +12,66 @@
 <style>
 
 body{
-
     margin:0;
     padding:0;
-    font-family:Arial;
+    font-family:Arial, sans-serif;
     background:#f2f2f2;
-
 }
 
 .header{
-
     background:#ff6600;
     color:white;
     padding:20px;
     text-align:center;
-
 }
 
 .container{
-
     width:900px;
     margin:40px auto;
-
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
 }
 
 .card{
-
-    background:white;
     width:250px;
-    display:inline-block;
-    margin:20px;
-    padding:20px;
-    text-align:center;
+    background:white;
     border-radius:10px;
-    box-shadow:0px 0px 10px gray;
+    overflow:hidden;
+    box-shadow:0 0 10px gray;
+    text-align:center;
+}
 
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card h2{
+    margin:15px 0 10px;
+}
+
+.card p{
+    margin-bottom:20px;
+    font-size:18px;
 }
 
 button{
-
     width:150px;
     padding:10px;
+    margin-bottom:20px;
     border:none;
     background:green;
     color:white;
     border-radius:5px;
     cursor:pointer;
+    font-size:16px;
+}
 
+button:hover{
+    background:#006400;
 }
 
 </style>
@@ -68,54 +81,55 @@ button{
 <body>
 
 <div class="header">
-
-<h1>Restaurants</h1>
-
+    <h1>Restaurants</h1>
 </div>
 
 <div class="container">
 
-<div class="card">
+    <!-- Pizza Hut -->
+    <div class="card">
 
-<h2>Pizza Hut</h2>
+        <img src="images/pizzahut.jpg" alt="Pizza Hut">
 
-<p>Mangalore</p>
+        <h2>Pizza Hut</h2>
 
-<form action="menu.jsp">
+        <p>Mangalore</p>
 
-<button>View Menu</button>
+        <form action="menu.jsp" method="get">
+            <button type="submit">View Menu</button>
+        </form>
 
-</form>
+    </div>
 
-</div>
+    <!-- KFC -->
+    <div class="card">
 
-<div class="card">
+        <img src="images/kfc.jpg" alt="KFC">
 
-<h2>KFC</h2>
+        <h2>KFC</h2>
 
-<p>Bangalore</p>
+        <p>Bangalore</p>
 
-<form action="menu.jsp">
+        <form action="menu.jsp" method="get">
+            <button type="submit">View Menu</button>
+        </form>
 
-<button>View Menu</button>
+    </div>
 
-</form>
+    <!-- Udupi Cafe -->
+    <div class="card">
 
-</div>
+        <img src="images/udupicafe.jpg" alt="Udupi Cafe">
 
-<div class="card">
+        <h2>Udupi Cafe</h2>
 
-<h2>Udupi Cafe</h2>
+        <p>Mysore</p>
 
-<p>Mysore</p>
+        <form action="menu.jsp" method="get">
+            <button type="submit">View Menu</button>
+        </form>
 
-<form action="menu.jsp">
-
-<button>View Menu</button>
-
-</form>
-
-</div>
+    </div>
 
 </div>
 

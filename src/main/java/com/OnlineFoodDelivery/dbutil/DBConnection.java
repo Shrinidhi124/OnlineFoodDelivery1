@@ -11,7 +11,7 @@ public class DBConnection {
     private static final String USERNAME = "root";
 
     // MySQL Password
-    private static final String PASSWORD = "Root@123";
+    private static final String PASSWORD = "1234";
 
     // Method to create database connection
     public static Connection getConnection() {
